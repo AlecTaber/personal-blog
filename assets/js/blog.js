@@ -27,3 +27,18 @@ function getBlogPosts() {
   }
 
 // TODO: Call the function to render the list of blog posts
+function renderPosts() {
+  const posts = getBlogPosts();
+  if (posts.length === 0) {
+    handleNoPosts();
+  } else {
+    posts.forEach(post => {
+      const article = createElement('article', { class: 'card' }, postsList);
+      createElement('h2', {}, article, post.title);
+      createElement('blockquote', {}, article, post.content);
+      createElement('p', {}, article, `Written by: ${post.username}`);
+    });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', renderPosts);
