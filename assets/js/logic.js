@@ -19,3 +19,11 @@ document.getElementById('toggle').addEventListener('click', toggleMode);
 document.addEventListener('DOMContentLoaded', applySavedTheme);
 
 // TODO: Create functions to read and write from local storage
+function writeToLocalStorage(key, value) {
+    localStorage.setItem(key, JSON.stringify(value));
+}
+
+function readFromLocalStorage(key) {
+    const data = localStorage.getItem(key);
+    return data ? JSON.parse(data) : null;
+]
