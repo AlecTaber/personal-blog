@@ -9,9 +9,9 @@ function toggleMode() {
 
 function applySavedTheme() {
     const theme = localStorage.getItem('theme');
-    if (savedTheme) {
+    if (theme) {
         document.body.classList.remove('light', 'dark');
-        document.body.classList.add(savedTheme);
+        document.body.classList.add(theme);
     }
 }
 
