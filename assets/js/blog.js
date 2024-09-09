@@ -16,7 +16,14 @@ function createElement(tag, attributes ={}, parent, content ='') {
 }
 
 // TODO: Create a function that handles the case where there are no blog posts to display
+function handleNoPosts() {
+    const noPostsMessage = createElement('p', { class: 'no-posts' }, postsList, 'No blog posts available.');
+  }
 
 // TODO: Create a function that reads from local storage and returns the data
+function getBlogPosts() {
+    const posts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+    return posts;
+  }
 
 // TODO: Call the function to render the list of blog posts
