@@ -26,4 +26,4 @@ function writeToLocalStorage(key, value) {
 function readFromLocalStorage(key) {
     const data = localStorage.getItem(key);
     return data ? JSON.parse(data) : null;
-]
+}
